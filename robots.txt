@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://schedule-13d-13g-deadline-calculator.vercel.app/sitemap.xml

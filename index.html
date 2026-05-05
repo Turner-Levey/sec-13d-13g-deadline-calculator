@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schedule 13D / 13G Deadline Calculator</title>
+    <meta name="description" content="Free no-tracking Schedule 13D and 13G deadline calculator for common beneficial ownership reporting scenarios, business-day timing, 10 p.m. ET cutoff notes, memo copy, and CSV export.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://schedule-13d-13g-deadline-calculator.vercel.app/">
+    <meta property="og:title" content="Schedule 13D / 13G Deadline Calculator">
+    <meta property="og:description" content="Calculate common Schedule 13D and 13G target dates locally in your browser. No signup, no tracking, no uploaded data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://schedule-13d-13g-deadline-calculator.vercel.app/">
+    <meta property="og:image" content="https://schedule-13d-13g-deadline-calculator.vercel.app/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://schedule-13d-13g-deadline-calculator.vercel.app/preview.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Schedule 13D / 13G Deadline Calculator",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "url": "https://schedule-13d-13g-deadline-calculator.vercel.app/",
+            "description": "Free no-tracking browser-only deadline worksheet for common Schedule 13D and Schedule 13G beneficial ownership reporting scenarios.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does this Schedule 13D and 13G calculator do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It estimates planning target dates for common beneficial ownership reporting scenarios, including initial Schedule 13D, Schedule 13D amendments, passive investor Schedule 13G filings, QII or exempt investor quarter-end scenarios, and accelerated Schedule 13G amendment scenarios."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this decide whether Schedule 13D or 13G is required?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is an informational date worksheet only. It does not determine beneficial ownership, group status, control intent, filer category, exemptions, EDGAR readiness, or filing obligations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this upload filing data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The calculator runs entirely in the browser and has no signup, cookies, analytics, beacons, external scripts, uploads, or browser storage."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel tool-panel" aria-labelledby="page-title">
+        <div class="mast">
+          <div>
+            <p class="eyebrow">Local-first SEC date worksheet</p>
+            <h1 id="page-title">Schedule 13D / 13G Deadline Calculator</h1>
+            <p class="lede">Estimate common beneficial ownership reporting target dates, then copy a source-linked memo or CSV row for a securities, compliance, investor-relations, or legal-ops checklist.</p>
+          </div>
+          <div class="date-badge" aria-label="Common deadline examples">
+            <span>5 BD</span>
+            <small>13D initial and passive 13G initial planning</small>
+          </div>
+        </div>
+
+        <form class="calculator" id="deadline-form">
+          <div class="grid">
+            <label class="field">
+              <span>Filer or investor</span>
+              <input id="filer" type="text" autocomplete="off" value="Example Reporting Person">
+            </label>
+            <label class="field">
+              <span>Issuer</span>
+              <input id="issuer" type="text" autocomplete="off" value="Example Public Company">
+            </label>
+            <label class="field">
+              <span>Ticker / CIK</span>
+              <input id="ticker" type="text" autocomplete="off" value="EXPL / 0000000000">
+            </label>
+            <label class="field">
+              <span>Trigger date</span>
+              <input id="trigger-date" type="date">
+            </label>
+          </div>
+
+          <label class="field full">
+            <span>Reporting scenario</span>
+            <select id="scenario">
+              <option value="13d-initial">Schedule 13D initial - more than 5%</option>
+              <option value="13d-amendment">Schedule 13D material amendment</option>
+              <option value="13g-qii-exempt-quarter">Schedule 13G QII / exempt investor initial - quarter end</option>
+              <option value="13g-qii-initial-10">Schedule 13G QII initial - more than 10% month end</option>
+              <option value="13g-passive-initial">Schedule 13G passive investor initial - more than 5%</option>
+              <option value="13g-quarter-amendment">Schedule 13G material-change amendment - quarter end</option>
+              <option value="13g-qii-10-amendment">Schedule 13G QII amendment - more than 10% or 5% change</option>
+              <option value="13g-passive-10-amendment">Schedule 13G passive amendment - more than 10% or 5% change</option>
+            </select>
+          </label>
+
+          <div class="grid">
+            <label class="field">
+              <span>Actual filing date, optional</span>
+              <input id="actual-filing-date" type="date">
+            </label>
+            <label class="field">
+              <span>EDGAR readiness</span>
+              <select id="edgar-status">
+                <option>Unknown / verify</option>
+                <option>EDGAR access and filing agent confirmed</option>
+                <option>EDGAR access exists, filing role not confirmed</option>
+                <option>No EDGAR access confirmed yet</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field full">
+            <span>Ownership context</span>
+            <input id="ownership-context" type="text" value="Crossed more than 5% beneficial ownership threshold; verify category and control intent.">
+          </label>
+          <label class="field full">
+            <span>Extra SEC closure dates</span>
+            <input id="closure-dates" type="text" placeholder="2026-05-25, 2026-06-19">
+          </label>
+          <label class="field full">
+            <span>Source URL</span>
+            <input id="source-url" type="url" value="https://www.sec.gov/newsroom/press-releases/2023-219">
+          </label>
+          <label class="field full">
+            <span>Next verification step</span>
+            <input id="next-step" type="text" value="Confirm beneficial ownership, group status, control intent, filer category, trigger date, EDGAR readiness, and current SEC calendar with counsel.">
+          </label>
+
+          <div class="result-band" id="results" aria-live="polite"></div>
+          <textarea id="memo-output" spellcheck="false" aria-label="Generated Schedule 13D and 13G deadline memo"></textarea>
+
+          <div class="actions">
+            <button type="button" id="calculate">Calculate</button>
+            <button type="button" id="copy-memo">Copy memo</button>
+            <button type="button" id="copy-csv">Copy CSV row</button>
+            <button type="button" id="download-csv">Download CSV</button>
+          </div>
+          <p class="rate-note">Weekend and standard U.S. federal holiday handling is included. Add emergency SEC closure dates manually when applicable.</p>
+        </form>
+      </section>
+
+      <section class="support">
+        <div class="source-strip">
+          <span>Official sources</span>
+          <a href="https://www.sec.gov/newsroom/press-releases/2023-219" rel="noreferrer">SEC press release</a>
+          <a href="https://www.sec.gov/files/33-11253-fact-sheet.pdf" rel="noreferrer">SEC fact sheet</a>
+          <a href="https://www.sec.gov/files/rules/final/2023/33-11253.pdf" rel="noreferrer">SEC final rule</a>
+          <a href="https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/exchange-act-sections-13d-13g-regulation-13d-g-beneficial-ownership-reporting" rel="noreferrer">SEC C&DIs</a>
+        </div>
+        <div class="examples">
+          <h2>Scenario Coverage</h2>
+          <div class="table-wrap" role="region" aria-label="Schedule 13D and 13G scenario coverage">
+            <table>
+              <thead>
+                <tr>
+                  <th>Scenario</th>
+                  <th>Worksheet timing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Schedule 13D initial</td><td>5 business days after trigger date</td></tr>
+                <tr><td>Schedule 13D amendment</td><td>2 business days after material change</td></tr>
+                <tr><td>QII / exempt 13G initial</td><td>45 calendar days after quarter end</td></tr>
+                <tr><td>QII 13G over 10%</td><td>5 business days after month end</td></tr>
+                <tr><td>Passive 13G initial</td><td>5 business days after trigger date</td></tr>
+                <tr><td>Accelerated 13G amendments</td><td>2 or 5 business days, scenario-specific</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="notes">
+          <h2>Use Notes</h2>
+          <p>Use the output as a date-planning row, not as a filing conclusion. Confirm filer category, beneficial ownership, group status, control intent, exemptions, and trigger date before relying on any deadline.</p>
+          <p>The memo includes the base date used, raw calculated date, adjusted target date, EDGAR readiness note, source link, and warnings for practical review.</p>
+        </div>
+        <div class="faq">
+          <h2>FAQ</h2>
+          <h3>Does this replace counsel or EDGAR review?</h3>
+          <p>No. It is an informational worksheet, not legal advice, securities advice, EDGAR validation, SEC affiliation, or an EDGAR filing service.</p>
+          <h3>What about the 10 p.m. ET cutoff?</h3>
+          <p>The memo flags the SEC modernization cutoff note for Schedules 13D and 13G. Verify current EDGAR and Regulation S-T requirements before filing.</p>
+        </div>
+        <div class="privacy">
+          <h2>Privacy</h2>
+          <p>No signup, cookies, analytics, beacons, external scripts, uploads, or browser storage. The page can be saved and run offline.</p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

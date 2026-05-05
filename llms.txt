@@ -1,0 +1,19 @@
+# Schedule 13D / 13G Deadline Calculator
+
+> Free local-first, no-tracking Schedule 13D and 13G deadline calculator for common beneficial ownership reporting scenarios.
+
+Site: https://schedule-13d-13g-deadline-calculator.vercel.app/
+Source: https://github.com/Turner-Levey/schedule-13d-13g-deadline-calculator
+Preview image: https://schedule-13d-13g-deadline-calculator.vercel.app/preview.png
+IndexNow key file: https://schedule-13d-13g-deadline-calculator.vercel.app/4f2e8d9c6b7a4f3a9e1c0d8b6a2f4c1e.txt
+
+## Tool
+
+- [Schedule 13D / 13G Deadline Calculator](https://schedule-13d-13g-deadline-calculator.vercel.app/): Estimate common beneficial ownership reporting target dates, copy a source-linked memo, or export a CSV planning row.
+
+## Notes
+
+- Runs entirely in the browser.
+- No signup, cookies, analytics, beacons, uploads, external scripts, or browser storage.
+- Handles standard U.S. federal holidays and optional extra SEC closure dates.
+- Informational worksheet only; not legal advice, securities advice, investment advice, EDGAR validation, SEC affiliation, or an EDGAR filing service.
