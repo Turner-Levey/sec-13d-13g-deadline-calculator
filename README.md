@@ -16,6 +16,10 @@ Source: https://github.com/Turner-Levey/sec-13d-13g-deadline-calculator
 
 Preview image: https://sec-13d-13g-deadline-calculator.vercel.app/preview.png
 
+No-Login Tools listing: https://nologin.tools/tool/sec-13d-13g-deadline-calculator-vercel-app/
+
+No-Login Tools certificate: https://nologin.tools/badge/sec-13d-13g-deadline-calculator-vercel-app/
+
 Sources:
 
 - SEC press release: https://www.sec.gov/newsroom/press-releases/2023-219
