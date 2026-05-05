@@ -10,9 +10,11 @@ Free no-tracking Schedule 13D and 13G deadline calculator for common beneficial 
 
 The tool runs entirely in the browser. It has no signup, cookies, analytics, beacons, external scripts, uploads, or browser storage.
 
-Live site: https://schedule-13d-13g-deadline-calculator.vercel.app/
+Live site: https://sec-13d-13g-deadline-calculator.vercel.app/
 
-Preview image: https://schedule-13d-13g-deadline-calculator.vercel.app/preview.png
+Source: https://github.com/Turner-Levey/sec-13d-13g-deadline-calculator
+
+Preview image: https://sec-13d-13g-deadline-calculator.vercel.app/preview.png
 
 Sources:
 

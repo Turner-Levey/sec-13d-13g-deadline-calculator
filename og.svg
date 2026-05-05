@@ -11,7 +11,7 @@
   <text x="132" y="270" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">Schedule 13D / 13G</text>
   <text x="132" y="350" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">Deadline Calculator</text>
   <text x="132" y="425" fill="#526174" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Memo + CSV export. No signup. No tracking.</text>
-  <text x="132" y="485" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">schedule-13d-13g-deadline-calculator.vercel.app</text>
+  <text x="132" y="485" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">sec-13d-13g-deadline-calculator.vercel.app</text>
   <rect x="936" y="379" width="204" height="78" rx="16" fill="#1d4ed8"/>
   <text x="973" y="430" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">5 BD</text>
   <text x="945" y="498" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">13D initial</text>
