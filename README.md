@@ -14,7 +14,7 @@ Live site: https://sec-13d-13g-deadline-calculator.vercel.app/
 
 Source: https://github.com/Turner-Levey/sec-13d-13g-deadline-calculator
 
-Preview image: https://sec-13d-13g-deadline-calculator.vercel.app/preview.png
+![Schedule 13D / 13G Deadline Calculator preview](https://sec-13d-13g-deadline-calculator.vercel.app/preview.png)
 
 No-Login Tools listing: https://nologin.tools/tool/sec-13d-13g-deadline-calculator-vercel-app/
 
