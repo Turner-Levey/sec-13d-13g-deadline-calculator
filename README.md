@@ -20,6 +20,11 @@ No-Login Tools listing: https://nologin.tools/tool/sec-13d-13g-deadline-calculat
 
 No-Login Tools certificate: https://nologin.tools/badge/sec-13d-13g-deadline-calculator-vercel-app/
 
+Related standalone SEC tools:
+
+- SEC Filing Fee Calculator: https://sec-filing-fee-calculator.vercel.app/
+- Form D Deadline Calculator: https://form-d-deadline-calculator.vercel.app/
+
 Sources:
 
 - SEC press release: https://www.sec.gov/newsroom/press-releases/2023-219
