@@ -18,6 +18,8 @@ Source: https://github.com/Turner-Levey/sec-13d-13g-deadline-calculator
 
 Tiny Tool Town listing: https://www.tinytooltown.com/tools/schedule-13d-13g-deadline-calculator/
 
+Awesome SEC Filings listing: https://github.com/vibeyclaw/awesome-sec-filings#general-sec-filings
+
 No-Login Tools listing: https://nologin.tools/tool/sec-13d-13g-deadline-calculator-vercel-app/
 
 No-Login Tools certificate: https://nologin.tools/badge/sec-13d-13g-deadline-calculator-vercel-app/
